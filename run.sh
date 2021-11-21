@@ -54,4 +54,4 @@ sacrebleu -t wmt16 -l en-ro --detail < ${RESULT}.hyp > $RESULT.sacre.score
 
 sh $PRERO ${RESULT}.hyp > ${RESULT}.mbart.tok.hyp
 sh $PRERO ${REF} > ${RESULT}.mbart.tok.ref
-sacrebleu -tok 'none' -s 'none' $REF < ${RESULT}.mbart.tok.hyp > $RESULT.mbart.tok.score
+sacrebleu -tok 'none' -s 'none' ${RESULT}.mbart.tok.ref < ${RESULT}.mbart.tok.hyp > $RESULT.mbart.tok.score
